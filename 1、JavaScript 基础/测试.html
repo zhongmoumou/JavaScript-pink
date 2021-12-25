@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 300px;
+            background-color: pink;
+            margin: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+
+    <script>
+        let box = document.querySelector('.box');
+
+        // 鼠标在页面中的坐坐标（e.pageX、e.pageY）；
+        // 盒子在页面中的距离（box. offsetLeft、box. offsetTop）；
+        box.addEventListener('mousemove', function(e) { 
+            // e.pageX - box.offsetLeft 可以得到鼠标距离盒子左右的距离；
+            let left = e.pageX - box.offsetLeft;
+            // e.pageY - box.offsetTop 可以得到鼠标距离盒子左右的距离。
+            let top = e.pageY - box.offsetTop;
+
+            box.innerText = '鼠标距离盒子左边的坐标是：' + left + '\n'+ '\n' + '鼠标距离盒子上边的坐标是：' + top;
+        });
+    </script>
+</body>
+</html>
